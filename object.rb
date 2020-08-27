@@ -1,22 +1,34 @@
 class Task
-  attr_accessor :task_name, :details
+  attr_accessor :id, :name, :content
   @@count = 0
 
-  def initialize(task_name:, datails:)
-    @task_name = task_name
-    @datails = datails
+  def initialize(**params)
+    @id = @@count += 1
+    @name = params[:name]
+    @content = params[:content]
   end
 
   def info
-    @@count += 1
-    puts "タスクNO.#{@@count}#{@task_name}:#{@datails}"
+    puts "タスクNO.#{@id} #{@name}:#{@content}"
   end
 end
 
-task1 = Task.new(task_name: "仕事", datails: "AM8：00〜PM18:00まで仕事を行う" )
-task2 = Task.new(task_name: "買い物", datails: "豚肉、ニンニクの芽、玉ねぎ、焼肉のタレ")
-task3 = Task.new(task_name: "就寝", datails: "PM23:00〜就寝")
+class Todo
+  def initialize
+    @tasks = []
+  end
 
-task1.info
-task2.info
-task3.info
+  def add(task)
+    puts "#{}"
+  end
+end
+
+
+task1 = Task.new(name: "洗濯", content: "８時までに干し終える" )
+task2 = Task.new(name: "仕事", content: "9時〜18時")
+task3 = Task.new(name: "買い物", content: "卵、ネギ")
+
+puts task1.info
+puts task2.info
+puts task3.info
+
