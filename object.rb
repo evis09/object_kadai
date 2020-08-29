@@ -19,7 +19,7 @@ class Todo
   end
 
   def add(task)
-    puts "#{}"
+    @tasks.add(task)
   end
 end
 
