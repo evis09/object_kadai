@@ -19,16 +19,41 @@ class Todo
   end
 
   def add(task)
-    @tasks.add(task)
+    @tasks << task
+    puts "#{task.info}が追加されました。"
+    puts ""
   end
+
+  def info
+    puts "＜タスク一覧＞"
+    @tasks.each do |task|
+      puts "#{task.info}"
+    end
+  end
+
+  def delete(id:)
+    
+  end
+
+
+
+
 end
+
+
 
 
 task1 = Task.new(name: "洗濯", content: "８時までに干し終える" )
 task2 = Task.new(name: "仕事", content: "9時〜18時")
 task3 = Task.new(name: "買い物", content: "卵、ネギ")
 
-puts task1.info
-puts task2.info
-puts task3.info
+todo = Todo.new
+todo.add(task1)
+todo.add(task2)
+todo.add(task3)
+todo.info
+todo.delete(id: 1)
+# todo.info
+
+
 
