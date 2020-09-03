@@ -32,7 +32,8 @@ class Todo
   end
 
   def delete(id:)
-    
+    task = @tasks.find(|task|id)
+    @tasks.delete(task)
   end
 
 
