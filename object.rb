@@ -32,13 +32,11 @@ class Todo
   end
 
   def delete(id:)
-    task = @tasks.find(|task|id)
-    @tasks.delete(task)
+      if delete_task = @tasks.find { |task| task.id == id }
+        @tasks.delete(delete_task)
+        puts "#{delete_task.info}を削除しました。"
+      end
   end
-
-
-
-
 end
 
 
@@ -54,7 +52,7 @@ todo.add(task2)
 todo.add(task3)
 todo.info
 todo.delete(id: 1)
-# todo.info
+todo.info
 
 
 
