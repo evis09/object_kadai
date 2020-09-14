@@ -35,12 +35,11 @@ class Todo
       if delete_task = @tasks.find { |task| task.id == id }
         @tasks.delete(delete_task)
         puts "#{delete_task.info}を削除しました。"
+      else
+        puts "正しい値を入力してください。"
       end
   end
 end
-
-
-
 
 task1 = Task.new(name: "洗濯", content: "８時までに干し終える" )
 task2 = Task.new(name: "仕事", content: "9時〜18時")
